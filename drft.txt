@@ -1,0 +1,9 @@
+<?php
+
+                	$sq = 'SELECT product_image FROM product WHARE id="$data["p_id"]"';
+                	$rn = mysqli_query($connection,$sq);
+                	if($rn)
+                	echo '5f2bd06eb08f9.jpg';
+
+
+                	?>

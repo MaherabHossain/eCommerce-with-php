@@ -1,36 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-	<link href="//netdsna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<link rel="stylesheet" type="text/css" href="style.css">
-	
-</head>
-<body>
-
-<!------ Include the above in your HEAD tag ---------->
-
-
-
-
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-	<nav class="navbar navbar-default bg-secondary">
-  <div class="container-fluid container">
-    <div class="navbar-header">
-      <a class="navbar-brand text-white" href="index.php">AmarDokan</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li ><a href="electronics.php?set" class="text-white" style="text-decoration: none;">Electronics</a></li>
-      <li><a href="fashion.php?set" class="text-white" style="text-decoration: none;">Fashion</a></li>
-      <li><a href="toys.php?set" class="text-white"style="text-decoration: none;">Toys</a></li>
-    </ul>
-  </div>
-</nav>
+<?php require_once('header.php')?>
 
 <div class="container">
 
@@ -44,7 +12,7 @@
 <div class="row">
 	<?php 
      
-      require_once('connection.php');
+      require_once('admin/connection.php');
       $sql = "SELECT * FROM product WHERE product_catagory='electronic'";
       $run = mysqli_query($connection,$sql);
      while($data = mysqli_fetch_array($run))
@@ -84,19 +52,6 @@
 </div> <!-- row.// -->
 </div> 
 <!--container.//-->
-
-<br><br><br>
-<article class="bg-secondary mb-3">  
-<div class="card-body text-center">
-    <h4 class="text-white">HTML UI KIT <br> Ready to use Bootstrap 4 components and templates </h4>
-<p class="h5 text-white"> for Ecommerce, marketplace, booking websites 
-and product landing pages</p>   <br>
-<p><a class="btn btn-warning" target="_blank" href="http://bootstrap-ecommerce.com/"> Bootstrap-ecommerce.com  
- <i class="fa fa-window-restore "></i></a></p>
-</div>
-<br><br><br>
-</article>
-</body>
-</html>
+<?php require_once('footer.php');?>>
 
 

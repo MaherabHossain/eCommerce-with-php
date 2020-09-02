@@ -11,12 +11,7 @@ class main
 	    $sql = "INSERT INTO product (product_name,product_price,product_image,product_catagory,product_description) VALUES ('$product_name','$product_price','$product_image_name','$catagory','$product_description')";
 	    $run = mysqli_query($connection,$sql);
 
-	    if ($run) {
-          return true;
-	    }else
-	    {
-	      return false;
-	    }
+	   retrun $run;
 
 	}
 

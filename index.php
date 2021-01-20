@@ -1,14 +1,19 @@
 <?php require_once('header.php')?>
-
+<?php
+//session_start();
+ if(isset($_SESSION['uniq_id'])){
+   echo $_SESSION['uniq_id'];
+ }
+ if(isset($_SESSION['id'])){
+  echo "<br>".$_SESSION['id'];
+ }
+?>
 <div class="container">
-
 	<div class="text-center mt-5">
 	  <form method="POST">
 	  	<input type="text" name="order_id" placeholder="Enter Order id" required>
 		<input type="submit" name="track_order" class="btn btn-secondary ml-auto" value="Track Order">
-		
 	   </form>
-
 	   <?php
 	    require_once('connection.php');
 	   if(isset($_REQUEST['track_order']))
@@ -17,14 +22,9 @@
 	   	 $sql = "SELECT * FROM `order` WHERE o_id='$order_id'";
 	   	 $run = mysqli_query($connection,$sql);
 	   	?>       
-    
-
         <?php
-
         while($data = mysqli_fetch_array($run))
         {
-        	
-
         ?>
            <table class="table table-striped custab">
     <thead>
@@ -40,12 +40,10 @@
             <th>order id</th>
             <th>order quantity</th>
             <th>Total Amount</th>
-            <th>Status</th>
-           
+            <th>Status</th>      
         </tr>
     </thead>    
             <tr>
-
                  <td><?php echo $data['id'];?></td>
                  <td><?php echo $data['c_name'];?></td>
                  <td><?php echo $data['c_email'];?></td>
@@ -63,18 +61,14 @@
     <?php
 }
 }
-
     ?>
 	</div>
-
-	
 <h3 class="text-center mt-5">Wellcome To Our Shop :)</h3>
 <br>  <p class="text-center">Shop With 15% Discount </p>
 <hr>
 
 <div class="row">
-	<?php 
-      
+	<?php       
       require_once('admin/connection.php');
       $sql = "SELECT * FROM product";
       $run = mysqli_query($connection,$sql);
@@ -90,7 +84,6 @@
 				<p class="desc"><?php echo $data['product_description'];?></p>
 				<div class="rating-wrap">
 					<div class="label-rating">Catagory : <?php echo $data['product_catagory']?></div>
-					
 				</div> 
 		</figcaption>
 		<div class="bottom-wrap">

@@ -1,26 +1,16 @@
 <!DOCTYPE html>
+<?php
+require_once('header.php');
+//session_start();
+if(!isset($_SESSION['uniq_id']))
+{
+    header('location:sign_in.php');
+}
+?>
 <!-- saved from url=(0078)https://mdbootstrap.com/previews/ecommerce-demo/examples/pages/basic/cart.html -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Material Design Bootstrap</title>
-  <!-- Roboto Font -->
-  <link rel="stylesheet" href="./Material Design Bootstrap_files/css">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="./Material Design Bootstrap_files/all.css">
-  <!-- Bootstrap core CSS -->
-  <link rel="stylesheet" href="./Material Design Bootstrap_files/bootstrap.min.css">
-  <!-- Material Design Bootstrap -->
-  <link rel="stylesheet" href="./Material Design Bootstrap_files/mdb-pro.min.css">
-  <!-- Material Design Bootstrap Ecommerce -->
-  <link rel="stylesheet" href="./Material Design Bootstrap_files/mdb.ecommerce.min.css">
-  <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
-
-<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<script src="main.js"></script>
-<link rel="stylesheet" type="text/css" href="style.css">
+  
   <!-- Your custom styles (optional) -->
 
 </head>
@@ -41,25 +31,6 @@
   while ($data = mysqli_fetch_array($run)) {
   
   ?>
-
-  <!--Main Navigation-->
-  <header>
-
-
-    <nav class="navbar navbar-default bg-secondary">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand text-white" href="index.php">AmarDokan</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li ><a href="electronics.php?set" class="text-white" style="text-decoration: none;">Electronics</a></li>
-      <li><a href="fashion.php?set" class="text-white" style="text-decoration: none;">Fashion</a></li>
-      <li><a href="toys.php?set" class="text-white"style="text-decoration: none;">Toys</a></li>
-    </ul>
-  </div>
-</nav>
-
-
     <div class="jumbotron color-grey-light mt-70">
       <div class="d-flex align-items-center h-100">
         <div class="container text-center py-5">
@@ -128,7 +99,7 @@
               
               </div>
             </div>
-            <h3 class="text-center">BILLING DETAILS</h3>
+            <h2 class="text-center"> <b>BILLING DETAILS</b> </h2>
             
 
                   <form class="shake" role="form" method="post" action="check_out.php" id="contactForm" name="contact-form" data-toggle="validator">
